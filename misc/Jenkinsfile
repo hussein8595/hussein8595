@@ -12,7 +12,7 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/', 'dockerhub') {
+     docker.withRegistry('https://index.docker.io/', 'docker') {
        def app = docker.build("bigdocker6969/nodejs-example:${commit_id}", '.').push()
      }
    }
